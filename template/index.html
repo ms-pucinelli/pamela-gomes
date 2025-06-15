@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Dynamic Web Fundamentals - Pamela Gomes</title>
+    <meta
+      name="description"
+      content="The current webpage aims to provide an introductory information about Pamela Gomes, her Country and important links regarding WDD 131 - Dynamic Web Fundamentals course from BYU-Idaho"
+    >
+    <meta name="author" content="Pamela Gomes">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/base.css" />
+    <script src="scripts/getdates.js" defer></script>
+  </head>
+  <body>
+    <div class="main-div">
+      <header>
+        <h1>WDD 131: Dynamic Web Fundamentals - <span>Pamela Gomes</span></h1>
+        <nav class="navigation-bar">
+          <a href="https://www.linkedin.com/in/pamela-gomes-dev/">LinkedIn</a>
+          <a href="https://byui.instructure.com/">I-Learn</a>
+          <a
+            href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/9?lang=eng&id=p5#p5"
+            >Scripture</a
+          >
+          <a href="#">Final Project</a>
+        </nav>
+      </header>
+      <main>
+        <section class="card" id="about-me">
+          <h2>About Me</h2>
+          <p>
+            My name is Pamela Gomes and I go by Pam. I was born in São Leopoldo,
+            Brazil. I am currently working as a Software Support Analyst at a
+            Brazilian Company. I enjoy spending time with my family and visiting
+            new places.
+          </p>
+          <img
+            src="./images/pamela-gomes.png"
+            alt="Pamela Gomes"
+          />
+          <h2>Brazil</h2>
+          <hr />
+          <figure>
+            <img
+              src="./images/brazilian-flag.png"
+              alt="Official Flag of Brazil"
+            />
+            <figcaption>Official Flag of Brazil</figcaption>
+          </figure>
+          <p>
+            Brazil is a vibrant country known for its rich culture, iconic
+            green, yellow, and blue flag, and diverse cuisine like feijoada and
+            pão de queijo. Its culture blends Indigenous, African, and European
+            influences, alongside strong religious traditions. Brazil boasts
+            incredible biodiversity, with the Amazon rainforest housing unique
+            flora and fauna, including jaguars, toucans, and thousands of plant
+            species.
+          </p>
+        </section>
+
+        <section class="card" id="web-tools">
+          <h2>Web Dev Resources</h2>
+          <ul>
+            <li>
+              <a href="https://fonts.google.com/">Google Fonts</a>
+            </li>
+            <li>
+              <a href="https://picresize.com/">Picture Resizing Tool</a>
+            </li>
+            <li>
+              <a href="https://coolors.co/palettes/trending">Colors Pallete</a>
+            </li>
+            <li>
+              <a href="https://www.pexels.com/pt-br/">Pexels</a>
+            </li>
+            <li>
+              <a href="https://tinypng.com/">Picture Optimization</a>
+            </li>
+            <li>
+              <a href="https://cssgridgarden.com/">CSS Grid Garden</a>
+            </li>
+            <li>
+              <a href="https://freeicons.io/">Free Icons</a>
+            </li>
+          </ul>
+        </section>
+      </main>
+      <footer>
+        <h4>&copy;<span id="currentyear"></span> Pamela Gomes - Brazil</h4>
+        <h5>Last Modification: <span id="lastupdated"></span></h5>
+      </footer>
+    </div>
+  </body>
+</html>
