@@ -1,11 +1,12 @@
 
 :root {
     --font-family: "Inria Sans", sans-serif;
-    --dark-grey: #2B2D42;
-    --grey: #b6c0d3;
+    --title-font-family: "Montserrat", sans-serif;
+    --dark-grey: #6B705C;
+    --grey: #EDF2F4;
     --light-grey: #EDF2F4;
-    --red:#950e24;
-    --dark-red:#660414;
+    --red:#CB997E;
+    --light-red:#ffe8d6;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
 header {
     background-color: var(--dark-grey);
     color: var(--light-grey);
+    font-family: var(--title-font-family);
 }
 
 .main-div {
@@ -37,6 +39,7 @@ header {
 header h1 {
     text-align: center;
     margin: 15px;
+    font-size: 1.5rem;
 }
 header h1 span {
     color: var(--grey)
@@ -53,7 +56,11 @@ header h1 span {
     color: inherit
 }
 .navigation-bar a:hover {
-    background-color: var(--dark-red);
+    background-color: var(--light-red);
+    color: var(--dark-grey);
+    text-decoration: none;
+    transition: .1.5s;
+    border-radius: 3px;
 }
 
 footer {
@@ -62,9 +69,10 @@ footer {
 
 .card {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: nowrap;
     gap: 20px;
-    justify-content: space-evenly;
+    justify-content:space-between;
     border-width: 1px;
     border-color: var(--grey);
     border-style: solid;
@@ -75,54 +83,88 @@ footer {
 .card h2:first-child {
     background-color: var(--dark-grey);
     color: var(--light-grey);
+    
 }
 .card h2 {
     margin: 0;
     padding: 15px;
     box-sizing: border-box;
     align-self: flex-start;
-}
-.card h2 {
-    margin-bottom: 0;
-}
-.card hr {
-    flex: 0 0 80%;
-}
-
-.card h2 {
-    flex: 1 0 100%;
+    font-family: var(--title-font-family);
+    font-size: 1rem;
+    width: 100%;
     text-align: center;
 }
-#about-me p {
-    flex: 0 0 60%;
+
+.card hr {
+    width: 80%;
+}
+
+#professional-experience p {
     text-align: left;
     align-self: center;
+    padding: 0 1em;
 }
-#about-me>img, #about-me figure {
+#projects>img {
     flex: 0 1 20%;
-    max-width: 20%;
+    max-width: 100%;
 }
-#about-me figure {
-    display: block;
-    margin: 0;
-}
-figure img {
+.tech-container {
     width: 100%;
-}
-figure figcaption {
-    font-style: italic;
+    overflow: hidden;
 }
 
 
-#web-tools h2 {
+.tech-logos {
+    display: flex;
+    flex-direction: row;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+}
+
+.tech-logos img {
+    width: 50px;
+    height: auto;
+    padding: 10px;
+}
+
+.tech-item {
+  position: relative;
+  display: inline-block;
+}
+
+.tech-item img {
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #CB997E;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 2px;
+  font-size: 11px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.tech-item:hover .caption {
+  opacity: 1;
+}
+
+#projects h2 {
     text-align: center;
 }
 
-#web-tools ul {
-    width: 100%;
+#projects ul {
+    max-width: 100%;
 }
 
-#web-tools li {
+#projects li {
     margin-bottom: 10px;
 }
 
@@ -136,4 +178,13 @@ footer h4, footer h5 {
 }
 footer h5 {
     color: var(--grey);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
