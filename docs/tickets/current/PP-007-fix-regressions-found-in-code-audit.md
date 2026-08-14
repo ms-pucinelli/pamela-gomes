@@ -1,4 +1,4 @@
-# PP-007 — Fix regressions found in portfolio code audit
+# PP-007 — Restore footer current year and remove obsolete last-updated logic
 
 ## Status
 Current
@@ -10,73 +10,60 @@ Bug + maintenance
 Medium
 
 ## Context
-A code audit of the current `main` branch after PP-005 identified two concrete regressions unrelated to the requested navigation-layout adjustment.
+A code audit of the current `main` branch after PP-005 identified one concrete regression unrelated to the requested navigation-layout adjustment.
 
-These should be fixed without changing the visual design or localization behavior.
-
-## Bug 1 — Footer year is not populated
 Both active pages render:
 
 `<span id="currentyear"></span>`
 
 The repository still contains `scripts/getdates.js`, but neither `index.html` nor `my-professional-journey.html` currently loads it. As a result, the footer year is left empty.
 
-The existing script also assumes an element with `id="lastupdated"` exists and writes to it unconditionally. That element is not present on the active pages, so simply re-adding the script reference without making the script defensive could introduce a runtime error.
+The existing script also contains logic for `#lastupdated`, but Pamela no longer wants that behavior in the portfolio. `#lastupdated` should not be restored or supported.
 
-### Expected fix
-- Ensure the current year renders on both active pages.
+The old Professional Journey route `my-journey-to-quality-assurance.html` is intentionally retired. Do not recreate a redirect page for it. The active and canonical page is `my-professional-journey.html`, and legacy QA-named page/assets may remain deleted.
+
+## Goal
+Restore the current year in the footer on both active pages while removing obsolete last-updated logic entirely.
+
+## Expected Fix
+- Ensure the current calendar year renders on `index.html`.
+- Ensure the current calendar year renders on `my-professional-journey.html`.
 - Reuse or simplify `scripts/getdates.js` rather than duplicating year logic across pages.
-- Make the script safe when optional elements such as `#lastupdated` are absent.
+- Remove all `#lastupdated` handling from `getdates.js`.
+- Do not add any `#lastupdated` element to the HTML.
+- Load the current-year script safely on both active pages.
 - Do not introduce console errors.
-
-## Bug 2 — Legacy Professional Journey URL now returns 404
-PP-001 required backward compatibility for the old route:
-
-`my-journey-to-quality-assurance.html`
-
-The current `main` branch no longer contains that file. Existing bookmarks or external links to the old URL therefore return a 404 instead of reaching the renamed Professional Journey page.
-
-### Expected fix
-Restore a lightweight static redirect page at:
-
-`my-journey-to-quality-assurance.html`
-
-It should redirect to:
-
-`my-professional-journey.html`
-
-Use a GitHub Pages/static-site-compatible approach and include a normal fallback link for visitors when automatic redirect is unavailable.
-
-The legacy page should not duplicate the full Professional Journey content.
+- Do not restore `my-journey-to-quality-assurance.html` or any other QA-named legacy journey assets.
 
 ## Acceptance Criteria
 - [ ] The footer displays the current year on `index.html`.
 - [ ] The footer displays the current year on `my-professional-journey.html`.
 - [ ] Footer year behavior works in both English and Portuguese because it is language-neutral.
-- [ ] `getdates.js` or its replacement does not throw when `#lastupdated` is absent.
+- [ ] `scripts/getdates.js` contains only the logic needed for the current year, with no `#lastupdated` access.
+- [ ] Neither active page contains a `#lastupdated` element.
 - [ ] No new console errors are introduced.
-- [ ] Direct access to `my-journey-to-quality-assurance.html` no longer returns 404.
-- [ ] The legacy URL leads users to `my-professional-journey.html`.
-- [ ] The redirect includes a usable fallback link.
+- [ ] `my-professional-journey.html` remains the only active Professional Journey page.
+- [ ] `my-journey-to-quality-assurance.html` is not recreated.
 - [ ] Current navigation and bilingual behavior remain unchanged.
 
 ## QA Validation
-1. Open both active pages and confirm the footer shows the current calendar year.
-2. Inspect the browser console for errors on both pages.
-3. Switch languages and confirm footer behavior remains unchanged.
-4. Open the old Professional Journey URL directly.
-5. Confirm it reaches the current Professional Journey page and does not produce a 404.
-6. Confirm normal direct access to `my-professional-journey.html` still works.
+1. Open `index.html` and confirm the footer shows the current calendar year.
+2. Open `my-professional-journey.html` and confirm the footer shows the same current year.
+3. Switch between English and Portuguese and confirm the year remains correct.
+4. Reload both pages and confirm the year still populates.
+5. Check the browser console for JavaScript errors.
+6. Confirm there is no `#lastupdated` UI or script behavior.
+7. Confirm `my-professional-journey.html` remains the active journey page and no QA-named legacy page is added.
 
 ## Likely Files Affected
 - `index.html`
 - `my-professional-journey.html`
 - `scripts/getdates.js`
-- `my-journey-to-quality-assurance.html` (restored redirect page)
 
 ## Out of Scope
 - Redesigning the footer.
-- Adding last-modified UI that is not already present.
+- Adding last-modified information.
+- Restoring legacy QA-named journey routes or assets.
 - Changing Professional Journey content.
 - Changing localization copy or language-selector behavior.
 - Changing the navigation layout tracked in PP-006.
