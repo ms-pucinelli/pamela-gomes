@@ -1,5 +1,18 @@
 const collapsibles = document.querySelectorAll(".collapsible");
 
+function updateAccordionLabels() {
+  const viewDetailsLabel = window.portfolioI18n.translate("journey.viewDetails");
+  const hideDetailsLabel = window.portfolioI18n.translate("journey.hideDetails");
+
+  document.querySelectorAll(".view-details").forEach((label) => {
+    label.textContent = viewDetailsLabel;
+  });
+
+  document.querySelectorAll(".hide-details").forEach((button) => {
+    button.textContent = hideDetailsLabel;
+  });
+}
+
 function toggleCollapsible(element, returnFocus = false) {
   const content = element.nextElementSibling;
   const isOpen = element.classList.toggle("active");
@@ -19,10 +32,13 @@ collapsibles.forEach((element, index) => {
   content.id = contentId;
   element.setAttribute("aria-controls", contentId);
 
+  const viewDetails = document.createElement("span");
+  viewDetails.className = "view-details";
+  element.append(viewDetails);
+
   const hideButton = document.createElement("button");
   hideButton.type = "button";
   hideButton.className = "hide-details";
-  hideButton.textContent = "▲ Hide details";
   hideButton.addEventListener("click", () => toggleCollapsible(element, true));
   content.append(hideButton);
 
@@ -35,3 +51,6 @@ collapsibles.forEach((element, index) => {
     }
   });
 });
+
+updateAccordionLabels();
+window.addEventListener("portfolio-language-change", updateAccordionLabels);

@@ -20,43 +20,54 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/index.css" />
+    <script src="./scripts/i18n.js" defer></script>
     <script src="./scripts/carousel-pointer.js" defer></script>
   </head>
   <body>
     <div class="main-div">
       <header>
+        <div class="language-selector">
+          <button class="language-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="language-menu">
+            <img src="./images/languages.svg" alt="" />
+            <span class="language-label-row"><span class="current-language">English</span><span class="language-arrow" aria-hidden="true">▼</span></span>
+          </button>
+          <div class="language-menu" id="language-menu" hidden>
+            <button type="button" data-language="en">English</button>
+            <button type="button" data-language="pt-BR">Português</button>
+          </div>
+        </div>
         <h1>PAMELA PUCINELLI</h1>
-        <h1 id="title">TECHNICAL SUPPORT | QUALITY ASSURANCE | UX & DESIGN</h1>
+        <h1 id="title" data-i18n="site.professionalTitle">TECHNICAL SUPPORT | QUALITY ASSURANCE | UX & DESIGN</h1>
         <nav class="navigation-bar">
-          <a href="./my-professional-journey.html">My Professional Journey</a>
+          <a href="./my-professional-journey.html" data-i18n="nav.journey">My Professional Journey</a>
           <a href="https://www.linkedin.com/in/pamela-tech/">LinkedIn</a>
-          <a href="mailto:pamela@pucinelli.dev" target="_blank">Contact Me</a>
+          <a href="mailto:pamela@pucinelli.dev" target="_blank" data-i18n="nav.contact">Contact Me</a>
         </nav>
       </header>
       <main class="main-index">
         <section class="card" id="professional-experience">
-          <h2>WHO AM I?</h2>
-          <p>
+          <h2 data-i18n="home.aboutTitle">WHO AM I?</h2>
+          <p data-i18n="home.about1">
             I am a technical support professional with experience investigating
             software issues, understanding user needs, reproducing bugs, and
             communicating technical information clearly between users and
             technical teams.
           </p>
-          <p>
+          <p data-i18n="home.about2">
             My background in customer and software support taught me to look at
             products from the user's perspective: where people get confused,
             which workflows create friction, how system behavior affects their
             experience, and what information is needed to reach a reliable
             resolution.
           </p>
-          <p>
+          <p data-i18n="home.about3">
             I am expanding this foundation through Quality Assurance and UI/UX
             Design, combining troubleshooting, testing, usability thinking, and
             visual design to better understand and improve the complete user
             experience with digital products.
           </p>
           <hr />
-          <h2>TOOLS, TECHNOLOGIES & LANGUAGES</h2>
+          <h2 data-i18n="home.toolsTitle">TOOLS, TECHNOLOGIES & LANGUAGES</h2>
 
           <div class="tech-container">
             <div class="tech-logos" id="tech-logos">
@@ -78,9 +89,9 @@
               <div class="tech-item"><img src="images/slack.svg" alt="Slack" /><span class="caption">Slack</span></div>
               <div class="tech-item"><img src="images/canva.svg" alt="Canva" /><span class="caption">Canva</span></div>
               <div class="tech-item"><img src="images/figma.svg" alt="Figma" /><span class="caption">Figma</span></div>
-              <div class="tech-item"><img src="images/brazil.svg" alt="Portuguese" /><span class="caption">Portuguese</span></div>
-              <div class="tech-item"><img src="images/united-states.svg" alt="English" /><span class="caption">English</span></div>
-              <div class="tech-item"><img src="images/spain.svg" alt="Spanish" /><span class="caption">Spanish</span></div>
+              <div class="tech-item"><img src="images/brazil.svg" alt="Portuguese" data-i18n-alt="languages.portuguese" /><span class="caption" data-i18n="languages.portuguese">Portuguese</span></div>
+              <div class="tech-item"><img src="images/united-states.svg" alt="English" data-i18n-alt="languages.english" /><span class="caption" data-i18n="languages.english">English</span></div>
+              <div class="tech-item"><img src="images/spain.svg" alt="Spanish" data-i18n-alt="languages.spanish" /><span class="caption" data-i18n="languages.spanish">Spanish</span></div>
 
               <!-- Repeated sequence supports the continuous logo animation. -->
               <div class="tech-item" aria-hidden="true"><img src="./images/html.svg" alt="" /><span class="caption">HTML5</span></div>
@@ -101,25 +112,25 @@
               <div class="tech-item" aria-hidden="true"><img src="images/slack.svg" alt="" /><span class="caption">Slack</span></div>
               <div class="tech-item" aria-hidden="true"><img src="images/canva.svg" alt="" /><span class="caption">Canva</span></div>
               <div class="tech-item" aria-hidden="true"><img src="images/figma.svg" alt="" /><span class="caption">Figma</span></div>
-              <div class="tech-item" aria-hidden="true"><img src="images/brazil.svg" alt="" /><span class="caption">Portuguese</span></div>
-              <div class="tech-item" aria-hidden="true"><img src="images/united-states.svg" alt="" /><span class="caption">English</span></div>
-              <div class="tech-item" aria-hidden="true"><img src="images/spain.svg" alt="" /><span class="caption">Spanish</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/brazil.svg" alt="" /><span class="caption" data-i18n="languages.portuguese">Portuguese</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/united-states.svg" alt="" /><span class="caption" data-i18n="languages.english">English</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/spain.svg" alt="" /><span class="caption" data-i18n="languages.spanish">Spanish</span></div>
             </div>
           </div>
         </section>
 
         <section class="card" id="projects">
-          <h2>QUALITY & USER EXPERIENCE PORTFOLIO</h2>
-          <img src="./images/QA-AI-vision.png" alt="Quality Assurance workspace with test cases, bug reports and testing dashboard" />
+          <h2 data-i18n="home.portfolioTitle">QUALITY & USER EXPERIENCE PORTFOLIO</h2>
+          <img src="./images/QA-AI-vision.png" alt="Quality Assurance workspace with test cases, bug reports and testing dashboard" data-i18n-alt="home.portfolioImageAlt" />
           <ul>
             <li>
-              <a target="_blank" href="https://pamela-pucinelli.notion.site/Quality-Assurance-Portfolio-355fefaecfb480ae8439cae7fcd3e5a1">Quality Assurance & User Experience Portfolio</a>
+              <a target="_blank" href="https://pamela-pucinelli.notion.site/Quality-Assurance-Portfolio-355fefaecfb480ae8439cae7fcd3e5a1" data-i18n="home.portfolioLink">Quality Assurance & User Experience Portfolio</a>
             </li>
           </ul>
-          <h2>CODING PROJECTS</h2>
+          <h2 data-i18n="home.projectsTitle">CODING PROJECTS</h2>
           <ul>
             <li><a href="https://pamela-pucinelli.notion.site/Monnve-Product-Preview-3b6fefaecfb481df9f03ea235eee3565">Monnve</a></li>
-            <li><a href="https://ms-pucinelli.github.io/mimc/">MIMC - Body Mass Index Calculator</a></li>
+            <li><a href="https://ms-pucinelli.github.io/mimc/" data-i18n="home.mimcLink">MIMC - Body Mass Index Calculator</a></li>
             <li><a href="https://pamela.pucinelli.dev/">pamela.pucinelli.dev</a></li>
           </ul>
         </section>

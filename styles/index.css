@@ -20,10 +20,102 @@ body {
 }
 
 header {
+    position: relative;
     background-color: var(--dark-grey);
     color: var(--light-grey);
     font-family: var(--title-font-family);
     grid-area: 1 / 1 / 2 / 4;
+}
+
+.language-selector {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    z-index: 10;
+    font-family: var(--font-family);
+}
+
+.language-trigger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 94px;
+    min-height: 64px;
+    padding: 4px 6px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.language-trigger img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+}
+
+.language-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 88px;
+    padding: 4px 8px;
+    border: 1px solid var(--light-grey);
+    border-radius: 3px;
+    background: var(--second-dark-grey);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.language-arrow {
+    font-size: 0.7em;
+}
+
+.language-trigger[aria-expanded="true"] .language-arrow {
+    transform: rotate(180deg);
+}
+
+.language-menu {
+    position: absolute;
+    top: calc(100% + 3px);
+    right: 0;
+    min-width: 112px;
+    padding: 5px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
+}
+
+.language-menu button {
+    display: block;
+    width: 100%;
+    padding: 9px 10px;
+    border: 0;
+    border-radius: 3px;
+    background: transparent;
+    color: var(--dark-grey);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+.language-menu button[hidden] {
+    display: none;
+}
+
+.language-menu button:hover,
+.language-menu button:focus-visible {
+    background: var(--light-red);
+}
+
+.language-trigger:focus-visible,
+.language-menu button:focus-visible {
+    outline: 3px solid var(--light-red);
+    outline-offset: 2px;
 }
 
 #title {
@@ -222,6 +314,15 @@ footer h4 {
 }
 
 @media (max-width: 760px) {
+    header {
+        padding-top: 80px;
+    }
+
+    .language-selector {
+        top: 8px;
+        right: 10px;
+    }
+
     main.main-index {
         grid-template-columns: 1fr;
     }
