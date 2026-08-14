@@ -21,35 +21,46 @@
     />
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/my-professional-journey.css" />
+    <script src="./scripts/i18n.js" defer></script>
     <script src="./scripts/my-professional-journey.js" defer></script>
   </head>
   <body>
     <div class="flex">
       <header class="professional-journey">
+        <div class="language-selector">
+          <button class="language-trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="language-menu">
+            <img src="./images/languages.svg" alt="" />
+            <span class="language-label-row"><span class="current-language">English</span><span class="language-arrow" aria-hidden="true">▼</span></span>
+          </button>
+          <div class="language-menu" id="language-menu" hidden>
+            <button type="button" data-language="en">English</button>
+            <button type="button" data-language="pt-BR">Português</button>
+          </div>
+        </div>
         <h1 id="my-name">PAMELA PUCINELLI</h1>
-        <h1 id="title">TECHNICAL SUPPORT | QUALITY ASSURANCE | UX & DESIGN</h1>
+        <h1 id="title" data-i18n="site.professionalTitle">TECHNICAL SUPPORT | QUALITY ASSURANCE | UX & DESIGN</h1>
         <nav class="navigation-bar">
-          <a href="./index.html">Home</a>
+          <a href="./index.html" data-i18n="nav.home">Home</a>
           <a href="https://www.linkedin.com/in/pamela-tech/">LinkedIn</a>
-          <a href="mailto:pamela@pucinelli.dev" target="_blank">Contact Me</a>
+          <a href="mailto:pamela@pucinelli.dev" target="_blank" data-i18n="nav.contact">Contact Me</a>
         </nav>
       </header>
       <main>
         <div class="journey-intro">
-          <h1>MY PROFESSIONAL JOURNEY</h1>
-          <p>My career has consistently placed me close to users, technology, and the problems that happen between them.</p>
-          <p>From service desk and software support to Quality Assurance and UI/UX studies, I have developed a multidisciplinary perspective on digital products: understanding what users are trying to accomplish, investigating what prevents them from doing it, validating system behavior, and thinking about how the experience could be improved.</p>
-          <p>Today, I bring these perspectives together through Technical Support, Quality Assurance, and User Experience.</p>
+          <h1 data-i18n="journey.title">MY PROFESSIONAL JOURNEY</h1>
+          <p data-i18n="journey.intro1">My career has consistently placed me close to users, technology, and the problems that happen between them.</p>
+          <p data-i18n="journey.intro2">From service desk and software support to Quality Assurance and UI/UX studies, I have developed a multidisciplinary perspective on digital products: understanding what users are trying to accomplish, investigating what prevents them from doing it, validating system behavior, and thinking about how the experience could be improved.</p>
+          <p data-i18n="journey.intro3">Today, I bring these perspectives together through Technical Support, Quality Assurance, and User Experience.</p>
         </div>
 
         <div class="collapsible-container">
-          <div tabindex="0" role="button" aria-expanded="false" class="collapsible">
+          <div tabindex="0" role="button" aria-expanded="false" class="collapsible" data-i18n-group="journey.entry1.summary">
             <p>2019-2020</p>
             <p>Volunteer Service</p>
             <p>The Church of Jesus Christ of Latter-day Saints</p>
             <p>Worked with communities across four different cities, supporting people from different backgrounds and adapting communication and activities to their individual needs.</p>
           </div>
-          <div class="content">
+          <div class="content" data-i18n-group="journey.entry1.details">
             <p>Skills developed:</p>
             <ul>
               <li>Multilingual and cross-cultural communication</li>
@@ -74,13 +85,13 @@
             </ul>
           </div>
 
-          <div tabindex="0" role="button" aria-expanded="false" class="collapsible">
+          <div tabindex="0" role="button" aria-expanded="false" class="collapsible" data-i18n-group="journey.entry2.summary">
             <p>2022-2023</p>
             <p>Trilingual Service Desk Analyst (Level 1)</p>
             <p>HCL Technologies</p>
             <p>Delivered first-line technical support in Portuguese, English, and Spanish, helping users resolve incidents and service requests while maintaining clear documentation and service quality.</p>
           </div>
-          <div class="content">
+          <div class="content" data-i18n-group="journey.entry2.details">
             <p>Skills developed:</p>
             <ul>
               <li>Multilingual technical communication</li>
@@ -106,13 +117,13 @@
             </ul>
           </div>
 
-          <div tabindex="0" role="button" aria-expanded="false" class="collapsible">
+          <div tabindex="0" role="button" aria-expanded="false" class="collapsible" data-i18n-group="journey.entry3.summary">
             <p>2023</p>
             <p>Volunteer Language Tutoring Manager</p>
             <p>Cumorah Academy</p>
             <p>Coordinated a team of 20 international tutors and supported consistent, high-quality experiences across tutoring sessions.</p>
           </div>
-          <div class="content">
+          <div class="content" data-i18n-group="journey.entry3.details">
             <p>Skills developed:</p>
             <ul>
               <li>Leadership</li>
@@ -137,13 +148,13 @@
             </ul>
           </div>
 
-          <div tabindex="0" role="button" aria-expanded="false" class="collapsible">
+          <div tabindex="0" role="button" aria-expanded="false" class="collapsible" data-i18n-group="journey.entry4.summary">
             <p>2023-2024</p>
             <p>Customer and Software Support Analyst (Level 2)</p>
             <p>Ninecon Consultores Associados Ltda</p>
             <p>Supported internal applications and a SaaS platform, investigating system behavior, validating data, maintaining technical knowledge, and helping ensure users received reliable information and solutions.</p>
           </div>
-          <div class="content">
+          <div class="content" data-i18n-group="journey.entry4.details">
             <p>Skills developed:</p>
             <ul>
               <li>Analytical thinking</li>
@@ -170,13 +181,13 @@
             </ul>
           </div>
 
-          <div tabindex="0" role="button" aria-expanded="false" class="collapsible">
+          <div tabindex="0" role="button" aria-expanded="false" class="collapsible" data-i18n-group="journey.entry5.summary">
             <p>2024-2026</p>
             <p>Technical Customer Support Representative (Level 1)</p>
             <p>Velozient</p>
             <p>Investigated 20–30 software-related cases daily in a SaaS environment, including account access, automations, scheduling workflows, and unexpected system behavior.</p>
           </div>
-          <div class="content">
+          <div class="content" data-i18n-group="journey.entry5.details">
             <p>Skills developed:</p>
             <ul>
               <li>Technical communication</li>
@@ -205,13 +216,13 @@
             </ul>
           </div>
 
-          <div tabindex="0" role="button" aria-expanded="false" class="collapsible">
+          <div tabindex="0" role="button" aria-expanded="false" class="collapsible" data-i18n-group="journey.entry6.summary">
             <p>Today</p>
             <p>Expanding into Quality Assurance &amp; UI/UX Design</p>
             <p>Professional Development</p>
             <p>Developing QA and UI/UX skills as complementary disciplines that extend a foundation in technical support and product understanding.</p>
           </div>
-          <div class="content">
+          <div class="content" data-i18n-group="journey.entry6.details">
             <p>Current focus:</p>
             <ul>
               <li>Quality Assurance helps determine whether the product behaves as expected.</li>

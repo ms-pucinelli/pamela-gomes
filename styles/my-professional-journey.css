@@ -75,8 +75,7 @@ main .collapsible,
     margin-top: 30px;
 }
 
-.collapsible::after {
-    content: "▼ View details";
+.view-details {
     display: inline-block;
     font-size: 0.8em;
     padding: 2px 20px;
@@ -84,12 +83,12 @@ main .collapsible,
     border-radius: 3px;
 }
 
-.collapsible:hover::after,
+.collapsible:hover .view-details,
 .hide-details:hover {
     color: white;
 }
 
-.collapsible.active::after {
+.collapsible.active .view-details {
     display: none;
 }
 
