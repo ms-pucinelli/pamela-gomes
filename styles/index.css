@@ -121,24 +121,6 @@ footer {
     max-width: 100%;
 }
 
-.skills-groups {
-    display: grid;
-    gap: 18px;
-    width: 100%;
-    padding: 0 14px 8px;
-}
-
-.skill-group {
-    min-width: 0;
-}
-
-.skill-group h3 {
-    margin: 0 0 8px;
-    font-family: var(--title-font-family);
-    font-size: 0.9rem;
-    color: var(--dark-grey);
-}
-
 .tech-container {
     width: 100%;
     overflow: hidden;
@@ -188,11 +170,10 @@ footer {
     line-height: 1.2;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s;
     z-index: 2;
 }
 
-.tech-item:hover .caption,
+.tech-item.is-pointer-target .caption,
 .tech-item:focus-within .caption {
     opacity: 1;
 }
@@ -249,7 +230,4 @@ footer h4 {
         flex-wrap: wrap;
     }
 
-    .skills-groups {
-        padding-inline: 10px;
-    }
 }
