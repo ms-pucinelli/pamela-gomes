@@ -20,6 +20,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/index.css" />
+    <script src="./scripts/carousel-pointer.js" defer></script>
   </head>
   <body>
     <div class="main-div">
@@ -27,7 +28,7 @@
         <h1>PAMELA PUCINELLI</h1>
         <h1 id="title">TECHNICAL SUPPORT | QUALITY ASSURANCE | UX & DESIGN</h1>
         <nav class="navigation-bar">
-          <a href="./my-journey-to-quality-assurance.html">My Professional Journey</a>
+          <a href="./my-professional-journey.html">My Professional Journey</a>
           <a href="https://www.linkedin.com/in/pamela-tech/">LinkedIn</a>
           <a href="mailto:pamela@pucinelli.dev" target="_blank">Contact Me</a>
         </nav>
@@ -56,6 +57,7 @@
           </p>
           <hr />
           <h2>TOOLS, TECHNOLOGIES & LANGUAGES</h2>
+
           <div class="tech-container">
             <div class="tech-logos" id="tech-logos">
               <div class="tech-item"><img src="./images/html.svg" alt="HTML" /><span class="caption">HTML5</span></div>
@@ -63,39 +65,45 @@
               <div class="tech-item"><img src="images/javascript.svg" alt="JavaScript" /><span class="caption">JavaScript</span></div>
               <div class="tech-item"><img src="images/python.svg" alt="Python" /><span class="caption">Python</span></div>
               <div class="tech-item"><img src="images/sql.svg" alt="SQL" /><span class="caption">SQL</span></div>
-              <div class="tech-item"><img src="images/c-sharp.svg" alt="CSharp" /><span class="caption">C#</span></div>
+              <div class="tech-item"><img src="images/c-sharp.svg" alt="C Sharp" /><span class="caption">C#</span></div>
               <div class="tech-item"><img src="images/graphql.svg" alt="GraphQL" /><span class="caption">GraphQL</span></div>
-              <div class="tech-item"><img src="images/macos.svg" alt="MacOS" /><span class="caption">MacOS</span></div>
+              <div class="tech-item"><img src="images/macos.svg" alt="macOS" /><span class="caption">macOS</span></div>
               <div class="tech-item"><img src="images/windows.svg" alt="Windows" /><span class="caption">Windows</span></div>
               <div class="tech-item"><img src="images/stripe.svg" alt="Stripe" /><span class="caption">Stripe</span></div>
+              <div class="tech-item"><img src="images/twilio.svg" alt="Twilio" /><span class="caption">Twilio</span></div>
               <div class="tech-item"><img src="images/zendesk.svg" alt="Zendesk" /><span class="caption">Zendesk</span></div>
               <div class="tech-item"><img src="images/servicenow.svg" alt="ServiceNow" /><span class="caption">ServiceNow</span></div>
-              <div class="tech-item"><img src="images/teams.svg" alt="Teams" /><span class="caption">Teams</span></div>
+              <div class="tech-item"><img src="images/jira.svg" alt="Jira" /><span class="caption">Jira</span></div>
+              <div class="tech-item"><img src="images/teams.svg" alt="Microsoft Teams" /><span class="caption">Microsoft Teams</span></div>
               <div class="tech-item"><img src="images/slack.svg" alt="Slack" /><span class="caption">Slack</span></div>
               <div class="tech-item"><img src="images/canva.svg" alt="Canva" /><span class="caption">Canva</span></div>
+              <div class="tech-item"><img src="images/figma.svg" alt="Figma" /><span class="caption">Figma</span></div>
               <div class="tech-item"><img src="images/brazil.svg" alt="Portuguese" /><span class="caption">Portuguese</span></div>
               <div class="tech-item"><img src="images/united-states.svg" alt="English" /><span class="caption">English</span></div>
               <div class="tech-item"><img src="images/spain.svg" alt="Spanish" /><span class="caption">Spanish</span></div>
 
-              <!-- Repeated sequence supports the existing continuous logo animation. -->
-              <div class="tech-item"><img src="./images/html.svg" alt="HTML" /><span class="caption">HTML5</span></div>
-              <div class="tech-item"><img src="./images/css.svg" alt="CSS" /><span class="caption">CSS3</span></div>
-              <div class="tech-item"><img src="images/javascript.svg" alt="JavaScript" /><span class="caption">JavaScript</span></div>
-              <div class="tech-item"><img src="images/python.svg" alt="Python" /><span class="caption">Python</span></div>
-              <div class="tech-item"><img src="images/sql.svg" alt="SQL" /><span class="caption">SQL</span></div>
-              <div class="tech-item"><img src="images/c-sharp.svg" alt="CSharp" /><span class="caption">C#</span></div>
-              <div class="tech-item"><img src="images/graphql.svg" alt="GraphQL" /><span class="caption">GraphQL</span></div>
-              <div class="tech-item"><img src="images/macos.svg" alt="MacOS" /><span class="caption">MacOS</span></div>
-              <div class="tech-item"><img src="images/windows.svg" alt="Windows" /><span class="caption">Windows</span></div>
-              <div class="tech-item"><img src="images/stripe.svg" alt="Stripe" /><span class="caption">Stripe</span></div>
-              <div class="tech-item"><img src="images/zendesk.svg" alt="Zendesk" /><span class="caption">Zendesk</span></div>
-              <div class="tech-item"><img src="images/servicenow.svg" alt="ServiceNow" /><span class="caption">ServiceNow</span></div>
-              <div class="tech-item"><img src="images/teams.svg" alt="Teams" /><span class="caption">Teams</span></div>
-              <div class="tech-item"><img src="images/slack.svg" alt="Slack" /><span class="caption">Slack</span></div>
-              <div class="tech-item"><img src="images/canva.svg" alt="Canva" /><span class="caption">Canva</span></div>
-              <div class="tech-item"><img src="images/brazil.svg" alt="Portuguese" /><span class="caption">Portuguese</span></div>
-              <div class="tech-item"><img src="images/united-states.svg" alt="English" /><span class="caption">English</span></div>
-              <div class="tech-item"><img src="images/spain.svg" alt="Spanish" /><span class="caption">Spanish</span></div>
+              <!-- Repeated sequence supports the continuous logo animation. -->
+              <div class="tech-item" aria-hidden="true"><img src="./images/html.svg" alt="" /><span class="caption">HTML5</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="./images/css.svg" alt="" /><span class="caption">CSS3</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/javascript.svg" alt="" /><span class="caption">JavaScript</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/python.svg" alt="" /><span class="caption">Python</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/sql.svg" alt="" /><span class="caption">SQL</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/c-sharp.svg" alt="" /><span class="caption">C#</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/graphql.svg" alt="" /><span class="caption">GraphQL</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/macos.svg" alt="" /><span class="caption">macOS</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/windows.svg" alt="" /><span class="caption">Windows</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/stripe.svg" alt="" /><span class="caption">Stripe</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/twilio.svg" alt="" /><span class="caption">Twilio</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/zendesk.svg" alt="" /><span class="caption">Zendesk</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/servicenow.svg" alt="" /><span class="caption">ServiceNow</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/jira.svg" alt="" /><span class="caption">Jira</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/teams.svg" alt="" /><span class="caption">Microsoft Teams</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/slack.svg" alt="" /><span class="caption">Slack</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/canva.svg" alt="" /><span class="caption">Canva</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/figma.svg" alt="" /><span class="caption">Figma</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/brazil.svg" alt="" /><span class="caption">Portuguese</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/united-states.svg" alt="" /><span class="caption">English</span></div>
+              <div class="tech-item" aria-hidden="true"><img src="images/spain.svg" alt="" /><span class="caption">Spanish</span></div>
             </div>
           </div>
         </section>
@@ -110,8 +118,9 @@
           </ul>
           <h2>CODING PROJECTS</h2>
           <ul>
+            <li><a href="https://pamela-pucinelli.notion.site/Monnve-Product-Preview-3b6fefaecfb481df9f03ea235eee3565">Monnve</a></li>
             <li><a href="https://ms-pucinelli.github.io/mimc/">MIMC - Body Mass Index Calculator</a></li>
-            <li><a href="https://ms-pucinelli.github.io/pamela-gomes/">My Portfolio</a></li>
+            <li><a href="https://pamela.pucinelli.dev/">pamela.pucinelli.dev</a></li>
           </ul>
         </section>
       </main>
